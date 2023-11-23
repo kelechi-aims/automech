@@ -48,14 +48,14 @@ AutoMech Locator is a web application that connects car owners with qualified me
 - Modify the config.py file with your database connection details.
 - Run the following commands:
 
-   '''bash
+   ```bash
    flask db init
    flask db migrate
    flask db upgrade
 
 5. Run the Application:
 
-   '''bash
+   ```bash
    flask run
 
 6. Open the App in Your Browser:
