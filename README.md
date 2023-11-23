@@ -35,12 +35,14 @@ AutoMech Locator is a web application that connects car owners with qualified me
 
 2. Set Up Virtual Environment:
 
+   ```bash
    python -m venv venv
 
    source venv/bin/activate  # On Windows, use 'venv\Scripts\activate'
 
 3. Install Dependencies:
 
+   ```bash
    pip install -r requirements.txt
 
 4. Configure the Database:
