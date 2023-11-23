@@ -72,4 +72,4 @@ AutoMech Locator is a web application that connects car owners with qualified me
 - If you'd like to contribute to the project, follow the Contribution Guidelines.
 
 ## License
-- This project is licensed under the MIT License.
+- This project is licensed under the ALX License.
