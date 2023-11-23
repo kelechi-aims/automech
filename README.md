@@ -17,7 +17,7 @@ AutoMech Locator is a web application that connects car owners with qualified me
 - Car owners can search for mechanics based on location and services offered.
 - Mechanics can register, create profiles, and manage service requests.
 - Users can leave reviews and ratings for mechanics.
-- ... (Add more features as you implement them)
+- ... (Add more features as we implement them)
 
 ## Technologies Used
 
@@ -30,39 +30,44 @@ AutoMech Locator is a web application that connects car owners with qualified me
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-username/AutoMech-Locator.git
+   git clone https://github.com/kelechi-aims/AutoMech-Locator.git
    cd AutoMech-Locator
 
 2. Set Up Virtual Environment:
 
-python -m venv venv
+   python -m venv venv
 
-source venv/bin/activate  # On Windows, use 'venv\Scripts\activate'
+   source venv/bin/activate  # On Windows, use 'venv\Scripts\activate'
 
 3. Install Dependencies:
 
-pip install -r requirements.txt
+   pip install -r requirements.txt
 
 4. Configure the Database:
 
-Modify the config.py file with your database connection details.
-Run the following commands:
+- Modify the config.py file with your database connection details.
+- Run the following commands:
 
-flask db init
-flask db migrate
-flask db upgrade
+   '''bash
+   flask db init
+   flask db migrate
+   flask db upgrade
 
 5. Run the Application:
 
-flask run
+   '''bash
+   flask run
 
 6. Open the App in Your Browser:
-Visit http://localhost:5000 in your web browser.
+   Visit http://localhost:5000 in your web browser.
 
-Usage
-Describe how users can use your application.
-Include any important instructions or usage details.
-Contributing
-If you'd like to contribute to the project, follow the Contribution Guidelines.
-License
-This project is licensed under the MIT License.
+## Usage(TO DO)
+
+- Describe how users can use your application.
+- Include any important instructions or usage details.
+
+## Contributing
+- If you'd like to contribute to the project, follow the Contribution Guidelines.
+
+## License
+- This project is licensed under the MIT License.
