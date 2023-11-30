@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Service - AutoMech Locator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Book Service</h2>
+        <div id="bookingForm">
+            <form action="{{ url_for('submit_booking') }}" method="post">
+                <label for="serviceType">Service Type:</label>
+                <input type="text" id="serviceType" name="serviceType" value="{{ service_type }}" readonly>
+
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" required>
+
+                <button type="submit">Book Service</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

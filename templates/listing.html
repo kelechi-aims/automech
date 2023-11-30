@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechanic Listing - AutoMech Locator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Mechanic Listing</h2>
+        <div id="mechanicList">
+            {% for mechanic in mechanics %}
+                <div class="mechanicCard">
+                    <h3>{{ mechanic.name }}</h3>
+                    <p><strong>Location:</strong> {{ mechanic.location }}</p>
+                    <p><strong>Services Offered:</strong> {{ mechanic.services }}</p>
+                    <p><strong>Ratings:</strong> {{ mechanic.ratings }}</p>
+                    <p><strong>Reviews:</strong> {{ mechanic.reviews }}</p>
+                    <button class="viewProfile">View Profile</button>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

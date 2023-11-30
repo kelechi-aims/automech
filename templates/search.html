@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search - AutoMech Locator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Find a Mechanic</h2>
+        <form id="searchForm">
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required>
+
+            <label for="serviceType">Service Type:</label>
+            <input type="text" id="serviceType" name="serviceType" required>
+
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

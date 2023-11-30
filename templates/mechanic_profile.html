@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechanic Profile - AutoMech Locator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Mechanic Profile</h2>
+        <div id="mechanicInfo">
+            <h3>{{ mechanic_name }}</h3>
+            <p><strong>Location:</strong> {{ mechanic_location }}</p>
+            <p><strong>Services Offered:</strong> {{ mechanic_services }}</p>
+            <p><strong>Ratings:</strong> {{ mechanic_ratings }}</p>
+            <p><strong>Reviews:</strong> {{ mechanic_reviews }}</p>
+            <p><strong>Contact Number:</strong> {{ mechanic_contact_number }}</p>
+            <p><strong>Email:</strong> {{ mechanic_email }}</p>
+        </div>
+        <button id="requestService">Request Service</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+body {
+  background-color: #004A66;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+header {
+  height: 70px;
+  width: 100%;
+}
+header > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline;
+  margin-right: 30px;
+
+}
+
+button {
+  height: 40px;
+  width : 200px;
+  font-size: 20px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.cta-0 {
+  float: left;
+}
+
+.cta-1 {
+  float: right;
+}
+
+.cta-1 > a {
+  padding: 8px;
+}
+
+.container {
+  color: white;
+  text-align: center;
+  width: 60%;
+}
+
+.container h1 {
+  font-size: 50px;
+}
+
+.container p {
+  font-size: 35px;
+}
+
