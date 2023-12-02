@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+"""
+Mechanic Registration Form
+"""
 from django import forms
 from .models import User  # Import your custom User model
 
