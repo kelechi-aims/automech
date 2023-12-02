@@ -1,7 +1,11 @@
-# Expected view
+#!/usr/bin/python3
+"""
+view
+"""
 
 from django.shortcuts import render
-from .forms import CustomUserCreationForm
+from web_dynamics import CustomUserCreationForm
+
 
 def register(request):
     if request.method == 'POST':
