@@ -1,11 +1,13 @@
 body {
   background-color: #004A66;
   font-family: 'Arial', sans-serif;
+  color: white;
 }
 
 body h1 h2 h3 p {
-  color: #002E3A;
+  color: white;
 }
+
 header {
   height: 70px;
   width: 100%;
@@ -20,6 +22,14 @@ li {
   display: inline;
   margin-right: 30px;
 
+}
+
+.container {
+ text-align: center;
+}
+
+input {
+  width: 60%;
 }
 
 button {
@@ -46,43 +56,12 @@ button {
   padding: 8px;
 }
 
-.container {
-  color: white;
-  text-align: left;
-  width: 50%;
-  padding-left: 40px;
-}
-/*
-.container h1 {
-  font-size: 50px;
-}
-
-.container p {
- font-size: 30px;
-}
-*/
-#featured-mechanics {
-    padding: 20px;
-}
-
-.mechanic-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.mechanic-card img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
-}
 
 footer {
     background-color: #004A66;
     color: white;
     width: 100%;
-    position: relative;
+    position: fixed;
     padding: 10px;
     text-align: center;
     bottom: 0;
