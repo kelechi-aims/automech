@@ -4,22 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search - AutoMech Locator</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="../static/css/search.css">
+    <link rel="shortcut icon" href="../static/images/icon.svg">
 </head>
 <body>
-    <div class="container">
-        <h2>Find a Mechanic</h2>
-        <form id="searchForm">
-            <label for="location">Location:</label>
-            <input type="text" id="location" name="location" required>
+  <div id="menu">
+    <header>
+      <nav role="navigation">
+        <ul class="cta-0">
+          <li style="float: left;"><a href="{{ url_for('home') }}"><img src="../static/images/logo.svg" alt="Logo" style="width:200px; height:54px;"></a></li>
+        </ul>
+        <!--<ul class="cta-1">
+          <li><a href="{{ url_for('search') }}"><button>Find a Mechanic</button></a></li>
+          <li><a href="{{ url_for('login') }}"><button>Login</button></a></li>
+          <li><a href="{{ url_for('register') }}"><button>Register</button></a></li>
+	</ul> -->
+      </nav>
+    </header>
+  </div>
+  <div class="container">
+    <h2>Find Mechanics Near You</h2>
+    <!-- remember to complete with the right url for action -->
+    <form id="searchForm" action="{{url_for('submit')}}" method="POST" autocomplete="on">
+      <label for="location">Location:</label>
+      <select type="text" id="location" name="location" required><br>
+        <option selected disabled>Select Type</option>
+        <option value="ikeja">Ikeja</option>
+	<option value="oshodi">Oshodi</option>
+      </select><br>
+      <label for="serviceType">Service Type:</label>
+      <select type="text" id="serviceType" name="serviceType" required><br>
+        <option selected disabled>Select Type</option>
+        <option value="tyrechange">Tyre change</option>
+        <option value="servicing">Servicing</option>
+      </select>
+        
 
-            <label for="serviceType">Service Type:</label>
-            <input type="text" id="serviceType" name="serviceType" required>
+      <input type="submit" value="Search" name"search">
+    </form>
+  </div>
 
-            <button type="submit">Search</button>
-        </form>
-    </div>
-
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <footer class="footer">
+   <p>&copy; 2023 AutoMech Locator. All rights reserved.</p>
+  </footer>
 </body>
 </html>

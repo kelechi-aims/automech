@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home - AutoMech Locator</title>
+  <title>AutoMech Locator</title>
   <link rel="stylesheet" type="text/css" href="../static/css/home.css">
   <link rel="shortcut icon" href="../static/images/icon.svg">
 </head>
@@ -17,16 +17,52 @@
 	<ul class="cta-1">
           <li><a href="{{ url_for('search') }}"><button>Find a Mechanic</button></a></li>
           <li><a href="{{ url_for('login') }}"><button>Login</button></a></li>
-          <li><a href="{{ url_for('register') }}"><button>Register</button></a></li>
-        </ul>
+	  <li><a href="{{ url_for('mechanic_register') }}"><button>Register as a Mechanic</button></a></li>
+	  <li><a href="{{ url_for('user_register') }}"><button>Register as a Car Owner</button></a></li>
+	</ul>
       </nav>
     </header>
   </div>
-    <div class="container">
-	<h1><b>Connecting Car Owners with Reliable Mechanics</b></h1>
-        <p>Wherever you are, AutoMech Locator is here to help you grow your business and connect with car owners in need of your expertise.</p>
+  <div class="container">
+    <h1><b>Wherever you are</b></h1>
+      <p>AutoMech Locator is your go-to platform for connecting with trusted and experienced mechanics. Discover skilled professionals ready to cater to your vehicle's maintenance and repair needs. Our featured mechanics exemplify expertise, reliability, and a commitment to exceptional service</p>
+  </div>
+  <section id="featured-mechanics">
+    <h2>Featured Mechanics</h2>
+    <!-- Placeholder for featured mechanics -->
+    <div class="mechanic-card">
+        <img src="mechanic1.jpg" alt="Mechanic 1">
+        <h3>Mechanic 1</h3>
+        <p>Specialized in brake repairs and oil changes.</p>
+        <button>Contact</button>
     </div>
-
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <div class="mechanic-card">
+        <img src="mechanic2.jpg" alt="Mechanic 2">
+        <h3>Mechanic 2</h3>
+        <p>Experienced in engine diagnostics and tune-ups.</p>
+        <button>Contact</button>
+    </div>
+        <div class="mechanic-card">
+        <img src="mechanic3.jpg" alt="Mechanic 3">
+        <h3>Mechanic 3</h3>
+        <p>Experienced in engine diagnostics and tune-ups.</p>
+        <button>Contact</button>
+    </div>
+    <div class="mechanic-card">
+        <img src="mechanic4.jpg" alt="Mechanic 4">
+        <h3>Mechanic 4</h3>
+        <p>Experienced in engine diagnostics and tune-ups.</p>
+        <button>Contact</button>
+    </div>
+    <!-- Add more mechanic cards as needed -->
+  </section>
+  <section id="search-form">
+    <h2>Find a Mechanic Near You</h2>
+    <!-- Add search form here -->
+  </section>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <footer class="footer">
+   <p>&copy; 2023 AutoMech Locator. All rights reserved.</p>
+  </footer>
 </body>
 </html>
