@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile - AutoMech Locator</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="../static/css/profile.css">
 </head>
 <body>
     <div class="container">
@@ -16,9 +16,13 @@
             <p><strong>Phone Number:</strong> {{ phone_number }}</p>
             <p><strong>Registration Date:</strong> {{ registration_date }}</p>
         </div>
-        <a href="{{ url_for('edit_profile') }}">Edit Profile</a>
+	<a href="{{ url_for('edit_profile') }}"><button>Edit Profile</button></a>
     </div>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <footer class="footer">
+   <p>&copy; 2023 AutoMech Locator. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
