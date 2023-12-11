@@ -1,0 +1,45 @@
+<!DOCTYPE>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Login - AutoMech Locator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../static/css/login.css">
+  <link rel="shortcut icon" href="../static/images/icon.svg">
+</head>
+<body>
+  <div id="menu">
+    <header>
+      <nav role="navigation">
+        <ul class="cta-0">
+          <li style="float: left;"><a href="{{ url_for('home') }}"><img src="../static/images/logo.svg" alt="Logo" style="width:200px; height:54px;"></a></li>
+	</ul>
+      </nav>
+    </header>
+  </div>
+  <div class="container">
+    <form method="post" action="">
+    <h2>Login Page</h2>
+      <label for="username">Username</label><br>
+      <input type="text" id="username" placeholder="Email" style="color: black" required><br>
+      <label for="password">Password</label><br>
+      <input type="password" id="password" placeholder="password" style="color: black" required><br>
+      <label for="usertype">Login Type</label><br>
+      <select id="usertype" name="usertype">
+        <option selected disabled style="color: black" >Select Type</option>
+        <option value="machanic" style="color: black">Mechanic</option>
+        <option value="User" style="color: black">Car Owner</option>
+      </select><br>
+    
+      <input type="submit" value="Login" name="login">
+    </form>
+    <p>Don't have an account?<br> <a href="{{ url_for('register') }}">Register here</a></p>
+
+  </div>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <footer class="footer">
+   <p>&copy; 2023 AutoMech Locator. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

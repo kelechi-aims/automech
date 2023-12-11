@@ -1,0 +1,124 @@
+body {
+  background-color: #004A66;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button:hover {
+  background-color: #007B99;
+  color: black;  
+}
+
+.firstdiv {
+  background-image: url('../images/image1.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+body h1 h2 h3 p {
+  color: #002E3A;
+}
+header {
+  height: 70px;
+  width: 100%;
+}
+header > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline;
+  margin-right: 30px;
+
+}
+
+button {
+/*  height: 40px;
+  width : 200px;*/
+  font-size: 12px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  background-color: #006080;
+}
+
+.cta-0 {
+  float: left;
+}
+
+.cta-1 {
+  float: right;
+}
+
+.cta-1 > a {
+  padding: 8px;
+}
+
+.container {
+  color: white;
+  text-align: left;
+  width: 60%;
+  padding-left: 40px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.container h1 {
+  font-size: 60px;
+  padding-top: 100px;
+}
+
+.container p {
+  font-size: 20px;
+  padding-bottom: 50px;
+}
+
+#featured-mechanics {
+  padding: 20px;
+}
+
+.mechanic-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.mechanic-card img {
+/*  max-width: 100%;    
+  height: auto;*/
+  height: 120px;
+  width: 100px;
+  border-radius: 4px;
+  float: left;
+  margin-right: 18px;
+}
+
+#search-form {
+  padding-left: 40px;
+}
+
+/*#search-form a {
+  float: right;
+
+}*/
+
+
+
+footer {
+  background-color: #004A66;
+  color: white;
+  width: 100%;
+  position: relative;
+  padding: 10px;
+  text-align: center;
+  bottom: 0;
+}

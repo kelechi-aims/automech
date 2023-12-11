@@ -18,5 +18,7 @@ class AUTMCommand(cmd.Cmd):
         """ Quits console """
         return True
 
+    def do_create(self, arg):
+
 if __name__ == '__main__':
     AUTMCommand().cmdloop()
