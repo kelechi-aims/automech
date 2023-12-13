@@ -1,0 +1,60 @@
+body {
+  background-color: #004A66;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  color: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 60%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2, h3, p {
+  color: black;
+}
+
+#about {
+  text-align: left;
+}
+
+#inspiration,
+#journey,
+#team,
+#explore {
+  margin-bottom: 30px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 20px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  background-color: #004A66;
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  bottom: 0;
+}
+
