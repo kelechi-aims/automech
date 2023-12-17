@@ -1,23 +1,24 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search - AutoMech Locator</title>
-    <link rel="stylesheet" href="../static/css/search.css">
-    <link rel="shortcut icon" href="../static/images/icon.svg">
+    <link rel="stylesheet" href="{% static 'css/search.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/icon.svg' %}">
 </head>
 <body>
   <div id="menu">
     <header>
       <nav role="navigation">
         <ul class="cta-0">
-          <li style="float: left;"><a href="https://www.automechlocator.tech/"><img src="../static/images/logo.svg" alt="Logo" style="width:200px; height:54px;"></a></li>
+          <li style="float: left;"><a href="{% url 'home' %}"><img src="{% static 'images/logo.svg' %}" alt="Logo" style="width:200px; height:54px;"></a></li>
         </ul>
         <!--<ul class="cta-1">
-          <li><a href="{{ url_for('search') }}"><button>Find a Mechanic</button></a></li>
-          <li><a href="{{ url_for('login') }}"><button>Login</button></a></li>
-          <li><a href="{{ url_for('register') }}"><button>Register</button></a></li>
+          <li><a href="{% url 'search' %}"><button>Find a Mechanic</button></a></li>
+          <li><a href="{% url 'login' %}"><button>Login</button></a></li>
+          <li><a href="{% url 'register' %}"><button>Register</button></a></li>
 	</ul> -->
       </nav>
     </header>
@@ -25,7 +26,7 @@
   <div class="container">
     <h2>Find Mechanics Near You</h2>
     <!-- remember to complete with the right url for action -->
-    <form id="searchForm" action="{{url_for('submit')}}" method="POST" autocomplete="on">
+    <form id="searchForm" action="{% url 'search' %}" method="POST" autocomplete="on">
       <label for="location">Location:</label>
       <select type="text" id="location" name="location" required><br>
         <option selected disabled>Select Location</option>
@@ -44,7 +45,7 @@
     </form>
   </div>
 
-  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <script src="{% static 'js/script.js' %}"></script>
   <footer class="footer">
    <p>&copy; 2023 AutoMech Locator. All rights reserved.</p>
   </footer>
