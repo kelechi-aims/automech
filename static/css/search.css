@@ -1,9 +1,13 @@
+/* profile.css */
+
+/* Styling for the entire body of the page */
 body {
   background-color: #004A66;
   font-family: 'Arial', sans-serif;
   color: white;
 }
 
+/* Applying box-sizing to all elements */
 * {
   box-sizing: border-box;
 }
@@ -12,22 +16,27 @@ body h1 h2 h3 p {
   color: white;
 }
 
+/* Styling for header section */
 header {
   height: 70px;
   width: 100%;
 }
+
+/* Styling for navigation list items */
 header > ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
+/* Styling for list items in the header */
 li {
   display: inline;
   margin-right: 30px;
 
 }
 
+/* Styling for the container holding the registration form */
 .container {
   background-color: #006680;
   width: 30%;
@@ -37,6 +46,7 @@ li {
   margin: 50px 100px 50px 350px;
 }
 
+/* Styling for input fields and select dropdown */
 input[type=text], input[type=password], input[type=email], select {
   width: 90%;
   color: black;
@@ -59,7 +69,7 @@ input[type=submit] {
   cursor: pointer;
 }
 
-
+/* Styling for buttons */
 button {
 /*  height: 40px;
   width : 200px;*/
@@ -72,10 +82,12 @@ button {
   background-color: #006080;
 }
 
+/* Styling for the left-aligned section in the header */
 .cta-0 {
   float: left;
 }
 
+/* Styling for the right-aligned section in the header */
 .cta-1 {
   float: right;
 }
@@ -84,6 +96,7 @@ button {
   padding: 8px;
 }
 
+/* Styling for the footer section at the bottom of the page */
 footer {
     background-color: #004A66;
     color: white;

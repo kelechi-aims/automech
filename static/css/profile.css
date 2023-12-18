@@ -1,5 +1,6 @@
-/* style.css */
+/* profile.css */
 
+/* Styling for the entire body of the page */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,10 +8,12 @@ body {
     background-color: #004A66;
 }
 
+/* Applying box-sizing to all elements */
 * {
   box-sizing: border-box;
 }
 
+/* Styling for the container holding the content */
 .container {
     max-width: 800px;
     margin: 50px auto;
@@ -19,10 +22,12 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Styling for heading elements */
 h2, h3 {
     color: #FFFFFF;
 }
 
+/* Styling for the mechanic information section */
 #mechanicInfo {
     background-color: #006080;;
     border: 1px solid #ddd;
@@ -32,10 +37,12 @@ h2, h3 {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Styling for strong (bold) elements */
 strong {
     color: #CCCCCC;
 }
 
+/* Styling for buttons */
 button {
     background-color: #4CAF50;
     color: #fff;
@@ -46,10 +53,13 @@ button {
     font-size: 14px;
 }
 
+
+/* Styling for button hover state */
 button:hover {
     background-color: #45a049;
 }
 
+/* Styling for the footer section at the bottom of the page */
 .footer {
     background-color: #004A66;
     color: #fff;

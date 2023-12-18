@@ -1,43 +1,55 @@
+/* Global styling for the body */
 body {
   background-color: #004A66;
   font-family: 'Arial', sans-serif;
   margin: 0;
 }
 
+/* Universal box-sizing for all elements */
 * {
   box-sizing: border-box;
 }
 
+/* Styling for button hover effect */
 button:hover {
   background-color: #007B99;
   color: black;  
 }
 
+/* Styling for the first division with background image */
 .firstdiv {
   background-image: url('../images/image1.jpg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-attachment: fixed;
 }
+
+/* Styling for text color within specific elements */
 body h1 h2 h3 p {
   color: #002E3A;
 }
+
+/* Header styling */
 header {
   height: 70px;
   width: 100%;
 }
+
+/* Styling for navigation list within the header */
 header > ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
+/* Styling for list items in the header */
 li {
   display: inline;
   margin-right: 30px;
 
 }
 
+/* Styling for buttons */
 button {
 /*  height: 40px;
   width : 200px;*/
@@ -50,10 +62,12 @@ button {
   background-color: #006080;
 }
 
+/* Styling for the left-aligned section in the header */
 .cta-0 {
   float: left;
 }
 
+/* Styling for the right-aligned section in the header */
 .cta-1 {
   float: right;
 }
@@ -62,6 +76,7 @@ button {
   padding: 8px;
 }
 
+/* Styling for padding and text alignment in the main container */
 .container {
   color: white;
   text-align: left;
@@ -71,20 +86,24 @@ button {
   padding-bottom: 100px;
 }
 
+/* Styling for heading within the container */
 .container h1 {
   font-size: 60px;
   padding-top: 100px;
 }
 
+/* Styling for paragraphs within the container */
 .container p {
   font-size: 20px;
   padding-bottom: 50px;
 }
 
+/* Styling for the featured mechanics section */
 #featured-mechanics {
   padding: 20px;
 }
 
+/* Styling for individual mechanic cards */
 .mechanic-card {
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -92,6 +111,7 @@ button {
   margin-bottom: 20px;
 }
 
+/* Styling for images within mechanic cards */
 .mechanic-card img {
 /*  max-width: 100%;    
   height: auto;*/
@@ -102,6 +122,7 @@ button {
   margin-right: 18px;
 }
 
+/* Styling for the search form section */
 #search-form {
   padding-left: 40px;
 }
@@ -111,8 +132,7 @@ button {
 
 }*/
 
-
-
+/* Styling for the footer */
 footer {
   background-color: #004A66;
   color: white;

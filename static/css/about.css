@@ -1,3 +1,4 @@
+/* Styles for the body of the page */
 body {
   background-color: #004A66;
   font-family: 'Arial', sans-serif;
@@ -5,24 +6,29 @@ body {
   color: white;
 }
 
+/* Box-sizing property for all elements */
 * {
   box-sizing: border-box;
 }
 
+/* Main container styling */
 .container {
   width: 60%;
   margin: 0 auto;
   padding: 20px;
 }
 
+/* Styles for headings and paragraphs */
 h2, h3, p {
   color: black;
 }
 
+/* Styles for the 'About Us' section */
 #about {
   text-align: left;
 }
 
+/* Individual styles for different subsections */
 #inspiration,
 #journey,
 #team,
@@ -30,24 +36,29 @@ h2, h3, p {
   margin-bottom: 30px;
 }
 
+/* Styles for unordered list */
 ul {
   list-style: none;
   padding: 0;
 }
 
+/* Styles for list items */
 ul li {
   margin-bottom: 20px;
 }
 
+/* Styles for links */
 a {
   color: white;
   text-decoration: none;
 }
 
+/* Hover effect for links */
 a:hover {
   text-decoration: underline;
 }
 
+/* Styles for the footer section */
 .footer {
   background-color: #004A66;
   color: white;
