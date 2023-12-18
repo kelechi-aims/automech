@@ -21,10 +21,10 @@ Visit the deployed site: [AutoMech Locator](https://www.automechlocator.tech/)
 Check out the final project blog article on [Medium](https://medium.com/@kelechi.denise/navigating-the-roads-of-automech-locator-9c2b2786fed2)
 
 Connect with the author(s) on LinkedIn:
-- [Author Name](https://www.linkedin.com/in/kelechi-denise)
-- [Co-author Name](https://www.linkedin.com/in/anoti-bills)
+- [Arukwe Kelechi Denise](https://www.linkedin.com/in/kelechi-denise)
+- [Tolulope Abiola](https://www.linkedin.com/in/anoti-bills)
 
-![AutoMech Locator](path-to-your-screenshot.png)
+![AutoMech Locator](static/images/deploy_img.png)
 
 
 
