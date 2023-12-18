@@ -1,7 +1,10 @@
+"""
+This is the url mapping file for Automech Locator
+"""
 from django.contrib import admin
 from django.urls import path, include
 
-from . import views  # Import the view function for your homepage
+from . import views 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -12,5 +15,5 @@ urlpatterns = [
     path('login/', views.login_view, name='login'),
     path('mechanic_register/', views.mechanic_register_view, name='mechanic_register'),
     path('user_register/', views.user_register_view, name='user_register'),
-    # Other URL patterns and their corresponding views
+    # Additional URL patterns and their corresponding views
 ]
