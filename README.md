@@ -5,23 +5,43 @@ AutoMech Locator is a web application that connects car owners with qualified me
 
 ## Table of Contents
 
+- [Introduction](#introduction)
 - [Features](#features)
+- [Installation](#installation)
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
 
+## Introduction
+
+Visit the deployed site: [AutoMech Locator](https://www.automechlocator.tech/)
+
+Check out the final project blog article on [Medium](https://medium.com/@kelechi.denise/navigating-the-roads-of-automech-locator-9c2b2786fed2)
+
+Connect with the author(s) on LinkedIn:
+- [Author Name](https://www.linkedin.com/in/kelechi-denise)
+- [Co-author Name](https://www.linkedin.com/in/anoti-bills)
+
+![AutoMech Locator](path-to-your-screenshot.png)
+
+
+
+
 ## Features
 
-- Car owners can search for mechanics based on location and services offered.
-- Mechanics can register, create profiles, and manage service requests.
-- Users can leave reviews and ratings for mechanics.
-- ... (Add more features as we implement them)
+- **User Authentication:** Secure user authentication system with options for car owners and mechanics.
+- **Search Mechanics:** Find mechanics based on location and service type.
+- **Mechanic Listing:** View a list of mechanics with essential information.
+- **User Profile:** Display user details, including email, location, phone number, and registration date.
+- **Request Service:** Users can request services directly from a mechanic's profile.
+- **Responsive Design:** Ensures a seamless experience across different devices.
 
 ## Technologies Used
 
 - Flask: The web framework used for backend development.
+- Python: Objects for backend
 - SQLAlchemy: ORM for managing database models.
 - HTML, CSS, JavaScript: Frontend technologies.
 - ... (List any additional technologies)
@@ -30,8 +50,8 @@ AutoMech Locator is a web application that connects car owners with qualified me
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/kelechi-aims/AutoMech-Locator.git
-   cd AutoMech-Locator
+   git clone https://github.com/kelechi-aims/automech.git
+   cd automech
 
 2. Set Up Virtual Environment:
 
@@ -63,13 +83,20 @@ AutoMech Locator is a web application that connects car owners with qualified me
 6. Open the App in Your Browser:
    Visit http://localhost:5000 in your web browser.
 
-## Usage(TO DO)
+## Usage
 
-- Describe how users can use your application.
-- Include any important instructions or usage details.
+- Register an account as a car owner or mechanic.
+- Log in with your credentials.
+- Search for mechanics based on location and service type.
+- View mechanic profiles to see details like ratings, reviews, and services offered.
+- Request services directly from a mechanic's profile.
 
 ## Contributing
-- If you'd like to contribute to the project, follow the Contribution Guidelines.
+- Fork the project.
+- Create a new branch: git checkout -b feature/new-feature.
+- Make changes and commit: git commit -m 'Add new feature'.
+- Push to the branch: git push origin feature/new-feature.
+- Open a pull request.
 
 ## License
 - This project is licensed under the ALX License.
