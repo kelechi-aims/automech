@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta information -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page title -->
     <title>Mechanic Profile - AutoMech Locator</title>
+    <!-- Link to the CSS file -->
     <link rel="stylesheet" href="../static/css/profile.css">
 </head>
 <body>
+    <!-- Main container -->
     <div class="container">
+        <!-- Page heading -->
         <h2>Mechanic Profile</h2>
+	<!-- Container for mechanic information -->
         <div id="mechanicInfo">
+	    <!-- Displaying mechanic details using template variables -->
             <h3>{{ mechanic_name }}</h3>
+
             <p><strong>Location:</strong> {{ mechanic_location }}</p>
             <p><strong>Services Offered:</strong> {{ mechanic_services }}</p>
             <p><strong>Ratings:</strong> {{ mechanic_ratings }}</p>
@@ -18,10 +26,12 @@
             <p><strong>Contact Number:</strong> {{ mechanic_contact_number }}</p>
             <p><strong>Email:</strong> {{ mechanic_email }}</p>
         </div>
+	<!-- Button to request service from the mechanic -->
         <button id="requestService">Request Service</button>
     </div>
-
+    <!-- Link to the script.js file for any client-side scripting -->
     <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <!-- Footer section containing copyright information --> 
   <footer class="footer">
    <p>&copy; 2023 AutoMech Locator. All rights reserved.</p>
   </footer>

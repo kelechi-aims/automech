@@ -2,19 +2,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta information for character set and viewport -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title and link to the search stylesheet -->
     <title>Search - AutoMech Locator</title>
     <link rel="stylesheet" href="{% static 'css/search.css' %}">
     <link rel="shortcut icon" href="{% static 'images/icon.svg' %}">
 </head>
 <body>
+  <!-- Navigation menu -->
   <div id="menu">
     <header>
       <nav role="navigation">
+        <!-- Left-aligned logo link -->
         <ul class="cta-0">
           <li style="float: left;"><a href="{% url 'home' %}"><img src="{% static 'images/logo.svg' %}" alt="Logo" style="width:200px; height:54px;"></a></li>
         </ul>
+	<!-- Uncomment the following lines for additional navigation buttons -->
         <!--<ul class="cta-1">
           <li><a href="{% url 'search' %}"><button>Find a Mechanic</button></a></li>
           <li><a href="{% url 'login' %}"><button>Login</button></a></li>
@@ -23,16 +28,21 @@
       </nav>
     </header>
   </div>
+  <!-- Main content container -->
   <div class="container">
+    <!-- Heading for the search form -->
     <h2>Find Mechanics Near You</h2>
+    <!-- Search form -->
     <!-- remember to complete with the right url for action -->
     <form id="searchForm" action="{% url 'search' %}" method="POST" autocomplete="on">
+      <!-- Dropdown for selecting location -->
       <label for="location">Location:</label>
       <select type="text" id="location" name="location" required><br>
         <option selected disabled>Select Location</option>
         <option value="ikeja">Ikeja</option>
 	<option value="oshodi">Oshodi</option>
       </select><br>
+      <!-- Dropdown for selecting service type -->
       <label for="serviceType">Service Type:</label>
       <select type="text" id="serviceType" name="serviceType" required><br>
         <option selected disabled>Select Type</option>
@@ -40,12 +50,13 @@
         <option value="servicing">Servicing</option>
       </select>
         
-
+      <!-- Submit button for searching -->
       <input type="submit" value="Search" name"search">
     </form>
   </div>
-
+  <!-- Script file for client-side functionality -->
   <script src="{% static 'js/script.js' %}"></script>
+  <!-- Footer section containing copyright information -->
   <footer class="footer">
    <p>&copy; 2023 AutoMech Locator. All rights reserved.</p>
   </footer>

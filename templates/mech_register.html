@@ -2,19 +2,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Meta information for character set and viewport -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Title and link to the search stylesheet -->
   <title>Register - AutoMech Locator</title>
   <link rel="stylesheet" href="../static/css/search.css">
   <link rel="shortcut icon" href="../static/images/icon.svg">
 </head>
 <body>
+  <!-- Navigation menu -->
   <div id="menu">
     <header>
       <nav role="navigation">
+        <!-- Left-aligned logo link -->
         <ul class="cta-0">
 		<li style="float: left;"><a href="{% url 'home' %}"><img src="../static/images/logo.svg" alt="Logo" style="width:200px; height:54px;"></a></li>
         </ul>
+        <!-- Right-aligned buttons for finding a mechanic, login, and register -->
         <ul class="cta-1">
           <li><a href="{% url 'search' %}"><button>Find a Mechanic</button></a></li>
           <li><a href="{% url 'login' %}"><button>Login</button></a></li>
@@ -23,9 +28,13 @@
       </nav>
     </header>
   </div>
+  <!-- Main content container -->
   <div class="container">
+    <!-- Heading for the registration form -->
     <h2>Register Form</h2>
+    <!-- Registration form -->
     <form id="registerForm" method="post">
+      <!-- Input fields for full name, email, password, confirm password, address, and phone number -->
       <input type="text" id="fullname" name="fullname" placeholder="Full Name" required>
     
       <input type="email" id="email" name="email" placeholder="Email" required>
@@ -38,7 +47,7 @@
 
       <input type="text" id="phonenumber" name="phonenumber" placeholder="Phone Number" required>
 
-      
+      <!-- Dropdown for selecting car brand -->
       <select id="carbrand" name="carbrand" >
         <option selected disabled >Car Brand</option>
         <option value="audi">Audi</option>
@@ -56,12 +65,15 @@
 	<option value="volvo">Volvo</option>
       </select>
 
-
+      <!-- Submit button for registration -->
       <input type="submit" value="Register">      
     </form>
+    <!-- Already have an account? Login link -->
     <p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>
    </div>
+   <!-- Script file for client-side functionality -->
    <script src="{% static 'js/script.js' %}"></script>
+  <!-- Footer section containing copyright information -->
   <footer class="footer">
    <p>&copy; 2023 AutoMech Locator. All rights reserved.</p>
   </footer>

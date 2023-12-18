@@ -2,17 +2,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Meta information for character set and viewport -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Title and stylesheets -->
   <title>Register - AutoMech Locator</title>
   <link rel="stylesheet" href="../static/css/search.css">
   <link rel="shortcut icon" href="../static/images/icon.svg">
 </head>
 <body>
+  <!-- Navigation menu -->
   <div id="menu">
     <header>
       <nav role="navigation">
-        <ul class="cta-0">
+        <!-- Logo and navigation buttons -->
+	<ul class="cta-0">
           <li style="float: left;"><a href="{% url 'home' %}"><img src="../static/images/logo.svg" alt="Logo" style="width:200px; height:54px;"></a></li>
         </ul>
         <ul class="cta-1">
@@ -23,9 +27,11 @@
       </nav>
     </header>
   </div>
+  <!-- Registration form section -->
   <div class="container">
     <h2>Register Form</h2>
     <form id="registerForm" method="post">
+      <!-- Input fields for user registration -->
       <input type="text" id="fullname" name="fullname" placeholder="Full Name" required>
     
       <input type="email" id="email" name="email" placeholder="Email" required>
@@ -40,6 +46,7 @@
 
       
       <select id="carbrand" name="carbrand" >
+	<!-- Dropdown for selecting car brand -->      
         <option selected disabled >Car Brand</option>
         <option value="audi">Audi</option>
 	<option value="bmw">BMW</option>
@@ -55,13 +62,16 @@
 	<option value="volkswagen">Volkswagen</option>
 	<option value="volvo">Volvo</option>
       </select>
-
+      <!-- Submit button for registration -->
 
       <input type="submit" value="Register">      
     </form>
+    <!-- Link to login page for existing users -->
     <p>Already have an account? <a href="{& url 'login' %}">Login here</a></p>
    </div>
+   <!-- Script tag for including a JavaScript file -->
    <script src="{% static 'js/script.js' %}"></script>
+   <!-- Footer section at the bottom of the page -->
   <footer class="footer">
    <p>&copy; 2023 AutoMech Locator. All rights reserved.</p>
   </footer>
