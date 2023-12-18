@@ -81,7 +81,7 @@ Connect with the author(s) on LinkedIn:
    flask run
 
 6. Open the App in Your Browser:
-   Visit http://localhost:88888888000 in your web browser.
+   Visit http://localhost:8000 in your web browser.
 
 ## Usage
 
