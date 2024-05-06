@@ -21,6 +21,7 @@ button:hover {
   background-image: url('../images/image1.jpg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  /*background-size: cover;*/
   background-attachment: fixed;
 }
 
@@ -37,6 +38,7 @@ header {
 
 /* Styling for navigation list within the header */
 header > ul {
+  display: flex;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -44,7 +46,7 @@ header > ul {
 
 /* Styling for list items in the header */
 li {
-  display: inline;
+  display: inline-flex;
   margin-right: 30px;
 
 }
@@ -65,11 +67,15 @@ button {
 /* Styling for the left-aligned section in the header */
 .cta-0 {
   float: left;
+  position: relative;
+  padding-left: 20px;
+  width: 25%;
 }
 
 /* Styling for the right-aligned section in the header */
 .cta-1 {
-  float: right;
+  float: left;
+  width: 75%;
 }
 
 .cta-1 > a {
@@ -81,7 +87,7 @@ button {
   color: white;
   text-align: left;
   width: 60%;
-  padding-left: 40px;
+  padding-left: 20px;
   padding-top: 100px;
   padding-bottom: 100px;
 }
@@ -130,6 +136,80 @@ button {
 /*#search-form a {
   float: right;
 
+}*/
+
+.menu::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/*[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+*/
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .cta-1 a {
+    width: 100%;
+    float: none;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .cta-1 {
+    width: 30%;
+    float: none;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .cta-1 {
+    width: 30%;
+    float: none;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .cta-1 {
+    width: 30%;
+    float: none;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .cta-1 {
+    width: 30%;
+    float: none;
+  }
+}
+
+/*@media screen and (max-width: 768px){
+  For mobile phones:
+  [class*="col-"] {
+    width: 50%;
+  }
+    #About, #findMechanicButton, #loginButton, #registerAsMechanic, #registerAsCarOwner {
+    width: 50%
+  }
 }*/
 
 /* Styling for the footer */

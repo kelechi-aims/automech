@@ -31,19 +31,29 @@ header > ul {
 
 /* Styling for list items in the header */
 li {
-  display: inline;
-  margin-right: 30px;
+  display: inline-flex;
+  margin-right: 0px;
 
+}
+
+button {
+  font-size: 12px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  background-color: #006080;
 }
 
 /* Styling for the container holding the registration form */
 .container {
   background-color: #006680;
-  width: 30%;
+  width: 80%;
   display: center;
   border-radius: 5px;
   padding: 20px;
-  margin: 50px 100px 50px 350px;
+  margin: 50px 50px 50px 50px;
 }
 
 /* Styling for input fields and select dropdown */
@@ -69,31 +79,68 @@ input[type=submit] {
   cursor: pointer;
 }
 
-/* Styling for buttons */
-button {
-/*  height: 40px;
-  width : 200px;*/
-  font-size: 20px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  color: white;
-  background-color: #006080;
-}
-
 /* Styling for the left-aligned section in the header */
 .cta-0 {
   float: left;
+  width: 25%;
+  position: relative;
+  padding-left: 20px;
 }
 
 /* Styling for the right-aligned section in the header */
 .cta-1 {
   float: right;
+  width: 75%;
 }
 
 .cta-1 > a {
   padding: 8px;
+}
+
+.menu::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .cta-1 a {
+    width: 100%;
+    float: right;  
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .cta-1 {
+    width: 75%;
+    float: right;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .cta-1 {
+    width: 75%;
+    float: right;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .cta-1 {
+    width: 75%;
+    float: right;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .cta-1 {
+    width: 75%;
+    float: right;
+  }
 }
 
 /* Styling for the footer section at the bottom of the page */
