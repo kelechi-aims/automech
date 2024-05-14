@@ -22,7 +22,22 @@ const redisClient = async () => {
         console.error('Redis error:', err);
     });
 
-    return client;
+    const reply = await client.set('hello', 'world');
+    console.log(reply); // OK
+
+    const keyValue = await client.get('hello');
+    console.log(keyValue); // world
+
+    // Clean up and allow the script to exit.
+    client.quit();
 };
 
-module.exports = redisClient;
+const main = async () => {
+    try {
+        await redisClient();
+    } catch (error) {
+        console.error(error);
+    }
+};
+
+main()

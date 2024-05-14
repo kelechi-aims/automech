@@ -1,16 +1,21 @@
 const mongoose = require('mongoose');
 
 
-const DB_HOST = process.env.DB_HOST || 'localhost';
-const DB_PORT = process.env.PORT || 27017;
-const url = `mongodb://${DB_HOST}:${DB_PORT}/AutoMechDB`;
+const dbHost = process.env.DB_HOST || 'localhost';
+const dbPort = process.env.DB_PORT || 27017;
+const dbName = process.env.DB_NAME || 'AutoMechDB';
+
+const url = `mongodb://${dbHost}:${dbPort}/${dbName}`;
 
 class DbClient {
     constructor() {
-        mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
+        mongoose.connect(url);
+        
+    }
 
-        .then(() => console.log(`connected to mongodb on port ${DB_PORT}`))
-        .catch((error) => console.error('Error connecting to mongodb', error))
+    closeConnection() {
+        mongoose.connection.close();
+        console.log('MongoDB connection closed');
     }
 }
 
