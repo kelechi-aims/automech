@@ -7,7 +7,7 @@ const dbName = process.env.DB_NAME || 'AutoMechDB';
 
 const url = `mongodb://${dbHost}:${dbPort}/${dbName}`;
 
-class DbClient {
+class DBClient {
     constructor() {
         mongoose.connect(url);
         
@@ -17,7 +17,15 @@ class DbClient {
         mongoose.connection.close();
         console.log('MongoDB connection closed');
     }
+
+    /**
+     * 
+     * @returns number of documents in the collection meachanic
+     */
+    async nbMechanics() {
+        return
+    }
 }
 
-
-module.exports = DbClient;
+const dbClient = new DBClient();
+module.exports = dbClient;
