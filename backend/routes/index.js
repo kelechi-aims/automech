@@ -1,8 +1,15 @@
 const express = require('express');
-const mechanicController = require('../controllers/mechanicController');  
+const mechanicController = require('../controllers/mechanicController');
+const AuthController = require('../controllers/authController');
 
-const router = express.Router();
+const injectRoutes = () => {
+    const router = express.Router();
 
-router.get('/mechanics', mechanicController.signupMechanic);
+    // Correcting the route path to match your request
+    router.post('/signupMechanic', mechanicController.signupMechanic);
+    router.post('/login', AuthController.login);
+    
+    return router;
+};
 
-module.exports = router;
+module.exports = injectRoutes;

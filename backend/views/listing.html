@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta information for character set and viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title and stylesheets -->
+    <title>Mechanic Listing - AutoMech Locator</title>
+    <link rel="stylesheet" type="text/css" href="./css/listing.css">
+</head>
+<body>
+    <!-- Container for the entire page content --> 
+    <div class="container">
+        <h2>Mechanic Listing</h2>
+        <div id="mechanicList">
+            {% for mechanic in mechanics %}
+	        <!-- Individual mechanic card with details -->
+                <div class="mechanicCard">
+		    <!-- Display the mechanic's name -->
+                    <h3>{{ mechanic.name }}</h3>
+		    <!-- Display the mechanic's location -->
+                    <p><strong>Location:</strong> {{ mechanic.location }}</p>
+		    <!-- Display the services offered by the mechanic -->
+                    <p><strong>Services Offered:</strong> {{ mechanic.services }}</p>
+		    <!-- Display the ratings of the mechanic -->
+                    <p><strong>Ratings:</strong> {{ mechanic.ratings }}</p>
+		    <!-- Display the reviews for the mechanic -->
+                    <p><strong>Reviews:</strong> {{ mechanic.reviews }}</p>
+		    <!-- Button to view the mechanic's profile -->
+                    <button class="viewProfile">View Profile</button>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+    <!-- Script tag for including a JavaScript file -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <!-- Footer section at the bottom of the page -->
+  <footer class="footer">
+   <p>&copy; 2023 AutoMech Locator. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

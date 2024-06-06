@@ -1,0 +1,68 @@
+/* Global styling for the body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #004A66;
+}
+
+/* Universal box-sizing for all elements */
+* {
+  box-sizing: border-box;
+}
+
+/* Styling for padding and text alignment in the main container */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #006080;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for h2 h3 header */
+h2 h3 {
+    color: #FFFFFF;
+}
+
+/* Styling for individual mechanic cards */
+.mechanicCard {
+    background-color: #006080;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for strong element */
+strong {border-radius: 4px;
+    color: #CCCCCC;
+}
+
+/* Styling for the viewProfile id */
+.viewProfile {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+/* Styling for the viewProfile hover */
+.viewProfile:hover {
+    background-color: #45a049;
+}
+
+/* Styling for the footer */
+footer {
+  background-color: #004A66;
+  color: white;
+  width: 100%;
+  position: fixed;
+  padding: 10px;
+  text-align: center;
+  bottom: 0;
+}

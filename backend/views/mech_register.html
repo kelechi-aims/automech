@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta information for character set and viewport -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Title and link to the search stylesheet -->
+  <title>Register - AutoMech Locator</title>
+  <link rel="stylesheet" href="./css/search.css">
+  <link rel="shortcut icon" href="./images/icon.svg">
+</head>
+
+<body>
+  <!-- Navigation menu -->
+  <div class="menu">
+    <header>
+      <nav role="navigation">
+        <!-- Left-aligned logo link -->
+        <ul class="cta-0">
+		<li style="float: left;"><a href="home.html"><img src="./images/logo.svg" alt="Logo" style="width:120px; height:54px;"></a></li>
+        </ul>
+        <!-- Right-aligned buttons for finding a mechanic, login, and register -->
+        <ul class="cta-1">
+          <li><a href="search.html"><button>Find a Mechanic</button></a></li>
+          <li><a href="login.html"><button>Login</button></a></li>
+	        <li><a href="car_register.html"><button>Register</button></a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <!-- Main content container -->
+  <div class="container">
+    <!-- Heading for the registration form -->
+    <h2>Register Form</h2>
+    <!-- Registration form -->
+    <form id="registerForm" method="post">
+      <!-- Input fields for full name, email, password, confirm password, address, and phone number -->
+      <input type="text" id="firstname" name="firstName" placeholder="First Name" required>
+      <div class="firstName error"></div>
+    
+      <input type="text" id="lastname" name="lastName" placeholder="Last Name" required>
+      <div class="lastName error"></div>
+
+      <input type="email" id="email" name="email" placeholder="Email" required>
+      <div class="email error"></div>
+
+      <input type="password" id="password" name="password" placeholder="Password" required>
+      <div class="password error"></div>
+      <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password" required>
+
+      <!-- input type="text" id="address" name="address" placeholder="Address" -->
+
+      <input type="text" id="phonenumber" name="phoneNumber" placeholder="Phone Number" required>
+      <div class="phoneNumber error"></div>
+
+      <!-- Dropdown for selecting car brand >
+      <select id="carbrand" name="carbrand" >
+        <option selected disabled >Car Brand</option>
+        <option value="audi">Audi</option>
+	<option value="bmw">BMW</option>
+	<option value="chevrolet">Chevrolet</option>
+	<option value="ford">Ford</option>
+	<option value="honda">Honda</option>
+	<option value="hyundai">Hyundai</option>
+	<option value="lexus">Lexus</option>
+	<option value="mazda">Mazda</option>
+	<option value="mercedesbenz">Mercedes Benz</option>
+	<option value="nissan">Nissan</option>
+	<option value="toyota">Toyota</option>
+	<option value="volkswagen">Volkswagen</option>
+	<option value="volvo">Volvo</option>
+      </select -->
+
+      <!-- Submit button for registration -->
+      <input type="submit" value="Register">      
+    </form>
+    <!-- Already have an account? Login link -->
+    <p>Already have an account? <a href="login.html">Login here</a></p>
+   </div>
+   <!-- Script file for client-side functionality -->
+   <script>
+    const form = document.getElementById('registerForm');
+
+    const firstNameError = document.querySelector('.firstName.error');
+    const lastNameError = document.querySelector('.lastName.error');
+    const emailError = document.querySelector('.email.error');
+    const passwordError = document.querySelector('.password.error');
+    const phoneNumberError = document.querySelector('.phoneNumber.error');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Reset errors
+      firstNameError.textContent = '';
+      lastNameError.textContent = '';
+      emailError.textContent = '';
+      passwordError.textContent = '';
+      phoneNumberError.textContent = '';
+
+      const firstName = form.firstname.value;
+      const lastName = form.lastname.value;
+      const email = form.email.value;
+      const password = form.password.value;
+      const phoneNumber = form.phonenumber.value;
+
+      try {
+        const res = await fetch('api/signupMechanic', {
+          method: 'POST',
+          body: JSON.stringify({ firstName, lastName, email, password, phoneNumber}),
+          headers: { 'content-Type': 'application/json'}
+        });
+        const data = await res.json();
+        console.log(data);
+
+        if (data.err) {
+          firstNameError.textContent = data.err.firstName;
+          lastNameError.textContent = data.err.lastName;
+          emailError.textContent = data.err.email;
+          passwordError.textContent = data.err.password;
+          phoneNumberError.textContent = data.err.phoneNumber;
+        }
+        if (data.newMechanic) {
+          location.assign('index.html');
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    });
+
+    
+   </script>
+  <!-- Footer section containing copyright information -->
+  <footer class="footer">
+   <p>&copy; 2023 AutoMech Locator. All rights reserved.</p>
+  </footer>
+
+<body>
+</html>

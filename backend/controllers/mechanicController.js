@@ -1,5 +1,30 @@
 const bcrypt = require('bcrypt');
 const Mechanic = require('../models/mechanic');
+const dbClient = require('../config/db');
+const jwt = require('jsonwebtoken');
+
+// Handle errors
+const handleErrors = (err) => {
+    let errors = { email: '', password: '', firstName: '', lastName: '', phoneNumber: '' };
+
+    // Duplicate error code
+    if (err.code === 11000) {
+        errors.email = 'Email already registered';
+        return errors;
+    }
+
+    // Validate errors
+    if (err.message.includes('Mechanic validation failed')) {
+        Object.values(err.errors).forEach(({ properties }) => {
+            errors[properties.path] = properties.message;
+        });
+        return errors;
+    }
+}
+
+const createToken = (id) => {
+    return jwt.sign({ id }, 'AutoMech_Locator_Secret', { expiresIn: '1h' });
+}
 
 
 class mechanicController {
@@ -8,43 +33,22 @@ class mechanicController {
         try {
             // Extract data from request body
             const { email, firstName, lastName, password, phoneNumber } = req.body;
-            
-            if (!email) {
-                return res.status(400).json({ message: 'Email is required' });
-            }
-            if (!firstName) {
-                return res.status(400).json({ message: 'First name is required' });
-            }
-            if (!lastName) {
-                return res.status(400).json({ message: 'Last name is required' });
-            }
-            if (!password) {
-                return res.status(400).json({ message: 'Password is required' });
-            }
-            if (!phoneNumber) {
-                return res.status(400).json({ message: 'Phone number is required' });
-            }
-
-            // Check if mechanic with the same email already exists
-            const existingMechanic = await Mechanic.findOne({ email });
-            if (existingMechanic) {
-                return res.status(400).json({ message: 'Mechanic already exists' });
-            }
-
-            // Hash password
-            const hashedPassword = await bcrypt.hash(password, 10);
-
+                    
             // Create new mechanic document
-            const newMechanic = new Mechanic({ email, firstName, lastName, password: hashedPassword, phoneNumber });    
+            const newMechanic = new Mechanic({ email, firstName, lastName, password, phoneNumber });    
             
             // Save mechanic to database
             await newMechanic.save();
-
+            const token = createToken(newMechanic._id);
+            console.log(token);
+            res.cookie('jwt', token, { httpOnly: true, maxAge: 3600000 }); // 60 * 60 * 1000, which is 1h
+            
             // Return success message
-            res.status(201).json({ message: 'Mechanic signup successfully' }); 
+            res.status(201).json({ newMechanic: newMechanic._id }); 
         } catch (error) {
-            console.error('Error in mechanic signup:', error);
-            res.status(500).json({ message: 'Internal server error while signing up mechanic' });
+            const err = handleErrors(error);
+            console.log(err);
+            res.status(400).json({ err });
         }
 
     }

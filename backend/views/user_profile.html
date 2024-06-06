@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta information -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page title -->
+    <title>User Profile - AutoMech Locator</title>
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="../static/css/profile.css">
+</head>
+<body>
+    <!-- Main content container -->
+    <div class="container">
+        <!-- Heading for the user profile -->
+        <h2>User Profile</h2>
+	<!-- User information section -->
+        <div id="userInfo">
+	    <!-- Displaying user-specific information -->
+            <h3>{{ username }}</h3>
+            <p><strong>Email:</strong> {{ email }}</p>
+            <p><strong>Location:</strong> {{ location }}</p>
+            <p><strong>Phone Number:</strong> {{ phone_number }}</p>
+            <p><strong>Registration Date:</strong> {{ registration_date }}</p>
+        </div>
+	<!-- Link to edit profile page -->
+	<a href="{{ url_for('edit_profile') }}"><button>Edit Profile</button></a>
+    </div>
+    
+    <!-- Script file for client-side functionality -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <!-- Footer section containing copyright information --> 
+  <footer class="footer">
+   <p>&copy; 2023 AutoMech Locator. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

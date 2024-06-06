@@ -1,10 +1,11 @@
-const DbClient = require('../config/db');
+const DBClient = require('../config/db');
 
 describe('DbClient', () => {
     let dbClient;
 
     beforeAll(() => {
-        dbClient = new DbClient();
+        
+        dbClient = new DBClient();
     });
 
     test('Connects to the MongoDB database', () => {

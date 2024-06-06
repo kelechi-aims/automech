@@ -1,0 +1,155 @@
+/* profile.css */
+
+/* Styling for the entire body of the page */
+body {
+  background-color: #004A66;
+  font-family: 'Arial', sans-serif;
+  color: white;
+}
+
+/* Applying box-sizing to all elements */
+* {
+  box-sizing: border-box;
+}
+
+body h1 h2 h3 p {
+  color: white;
+}
+
+/* Styling for header section */
+header {
+  height: 70px;
+  width: 100%;
+}
+
+/* Styling for navigation list items */
+header > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styling for list items in the header */
+li {
+  display: inline-flex;
+  margin-right: 0px;
+
+}
+
+button {
+  font-size: 12px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  background-color: #006080;
+}
+
+/* Styling for the container holding the registration form */
+.container {
+  background-color: #006680;
+  width: 80%;
+  display: center;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 50px 50px 50px 50px;
+}
+
+/* Styling for input fields and select dropdown */
+input[type=text], input[type=password], input[type=email], select {
+  width: 90%;
+  color: black;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 90%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Styling for the left-aligned section in the header */
+.cta-0 {
+  float: left;
+  width: 25%;
+  position: relative;
+  padding-left: 20px;
+}
+
+/* Styling for the right-aligned section in the header */
+.cta-1 {
+  float: right;
+  width: 75%;
+}
+
+.cta-1 > a {
+  padding: 8px;
+}
+
+.menu::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .cta-1 a {
+    width: 100%;
+    float: right;  
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .cta-1 {
+    width: 75%;
+    float: right;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .cta-1 {
+    width: 75%;
+    float: right;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .cta-1 {
+    width: 75%;
+    float: right;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .cta-1 {
+    width: 75%;
+    float: right;
+  }
+}
+
+/* Styling for the footer section at the bottom of the page */
+footer {
+    background-color: #004A66;
+    color: white;
+    width: 100%;
+    position: relative;
+    padding: 10px;
+    text-align: center;
+    bottom: 0;
+}
