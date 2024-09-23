@@ -73,11 +73,10 @@ const About = () => {
             {/* Expolre Our Project */}
             <div className="expolre">
               <h3>Explore Our Project</h3>
-              <p>
-              Feel free to explore our journey on <a href="https://github.com/kelechi-aims/AutoMech-Locator.git" target="_blank" rel="noopener noreferrer">GitHub</a>.
-              </p>
+              <span>Feel free to explore our journey on <a href="https://github.com/kelechi-aims/AutoMech-Locator.git" target="_blank" rel="noopener noreferrer">GitHub</a></span>
             </div>
           </section>
+          
         </div>
     );
 }

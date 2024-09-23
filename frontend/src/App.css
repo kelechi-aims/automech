@@ -2,9 +2,10 @@
 
 /* Styling for the entire body of the page */
 body {
-  background-color: #004761;
+  background: linear-gradient(223deg, #fdfdfd 14%, #5695b9 30%, #074f77 45%, #071923 70%);
   font-family: Garamond, serif;
   color: white;
+  height: 100vh;
 }
 
 /* Applying box-sizing to all elements */
@@ -14,15 +15,6 @@ body {
   box-sizing: border-box;
   text-decoration: none;
   scroll-behavior: smooth;
-}
-
-.background-img {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
 }
 
 body h1 h2 h3 {
@@ -48,6 +40,14 @@ header > ul {
   
 }
 
+.logo {
+  left: 75px;
+  top: 37px;
+  width: 146px;
+  height: 67px;
+}
+
+
 /* Styling for list items in the header */
 li {
   display: inline-grid;
@@ -67,7 +67,7 @@ li {
 }
 
 .cta-1 button:hover {
-  background-color: #004057;
+  background-color: #104558;
 }
 
 .active-link button {
@@ -78,8 +78,9 @@ li {
 /* Styling for the container holding the registration form */
 .home {
   background-color: transparent;
-  width: 70%;
-  padding-top: 20px;
+  width: 100%;
+  position: relative;
+  
   padding-bottom: 150px;
   margin: 0 auto;
 }
@@ -90,9 +91,10 @@ li {
   padding: 20px;
 }
 .home h1 {
-  font-size: 60px;
-  padding-top: 20px;
-  word-spacing: 20px;
+  font-size: 48px;
+  position: absolute;
+  left: 113px;
+  top: 333px;
 }
  .home p{
   font-size: 20px;
@@ -158,13 +160,24 @@ a:visited {
 }
 
 .mechanicreg {
-  padding: 100px 60px;
+  padding: 25px 60px ;
   margin: auto;
-  width: 40%;
+  width: 30%;
+  height: 360px;
   text-align: center;
+  margin-bottom: 120px;
+  margin-top: 60px;
+  background-color: #016a8a;
+  border-radius: 10px;
 }
 
+.mechanicreg h2 {
+  padding-bottom: 10px;
+}
 
+.mechanicreg p {
+  padding-top: 20px;
+}
 
 
 /* Styling for the footer section at the bottom of the page */

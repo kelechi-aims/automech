@@ -1,15 +1,20 @@
 import React from "react";
-import background from './images/background.jpg';
+import { NavLink } from "react-router-dom";
+//import background from './images/background.jpg';
+import landing from './images/landing_img.png';
 
 function Home() {
     return (    
-        <>
           <div className="home">
-            <img className="background-img" src={background} alt="Background"/>
-            <h1><b>Wherever you are</b></h1>
-            <p>AutoMech Locator is your go-to platform for connecting with trusted and experienced mechanics. Discover skilled professionals ready to cater to your vehicle's maintenance and repair needs. Our featured mechanics exemplify expertise, reliability, and a commitment to exceptional service</p>
+           <div>
+           <h1>Find Reliable<br /> Mechanics Nearby,<br /> Anytime.</h1>
+            <p>Get your car fixed by trusted<br /> mechanics within your area with just a<br /> few clicks.</p>
+            <NavLink to='signup' className={({ isActive }) => isActive ? "active-link" : ""}><button id="registerAsMechanic">Find Mechanics Now</button></NavLink>
           </div>
-        </>
+          <div>
+            <img className="landing-img" src={landing} alt="landing"/>
+           </div>
+          </div>
     );
 }
 

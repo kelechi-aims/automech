@@ -1,0 +1,341 @@
+body {
+    background: linear-gradient(223deg, #fdfdfd 7%, #5695b9 30%, #074f77 45%, #071923 70%);
+    font-family: Garamond, serif;
+    color: white;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-color: #071923;
+    
+}
+  
+/* Applying box-sizing to all elements */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+.firstdiv {
+    position: relative;
+}
+
+header {
+    height: 70px;
+    max-width: 100%;
+    padding-top: 25px;
+    display: flex;
+    z-index: 1000;
+    justify-content: space-between;
+}
+
+header > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cta-1 {
+    position: absolute;
+    left: 50%;
+    display: flex;
+}
+
+.cta-1 li {
+    
+    margin-right: 45px;
+    
+  
+}
+.cta-1 button, .home button {
+    font-size: 18px;
+    font-size: normal;
+    font-weight: 500;
+    height: 45px;
+    flex-shrink: 0;
+    font-family: Poppins;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 23px;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(90deg, rgba(4, 64, 87, 0.60) 29.94%, rgba(9, 140, 189, 0.60) 99.98%); 
+    transition: background-color .40s ease;
+}
+
+/* signup dropdown*/
+.custom-dropdown-menu {
+    background-color: #074f77 !important;
+    border: none !important;
+    border-radius: 10px !important;
+    margin-top: 0px !important;
+    width: 100px !important;
+    align-items: center !important;
+}
+  
+.custom-dropdown-item {
+    color: white !important;
+    padding: 5px 20px !important;
+    text-align: center !important;
+}
+  
+.custom-dropdown-item:hover {
+    padding: 8px !important;
+    text-align: center !important;
+    background-color: #0b2533 !important;
+}  
+
+.home button {
+    left: 8%;
+    top: 50%;
+    position: relative;
+    margin-bottom: 86px;
+}
+
+.cta-1 button:hover {
+    background-color: #0f5d7c;
+  }
+  
+  .active-link button {
+    background-color: #000405;
+  }
+  
+
+.home h1 {
+    left: 7%;
+    padding-top: 100px;
+    width: 40%;
+    position: relative;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: normal;
+    color: white;
+    margin-bottom: 20px;
+}
+.home p {
+    left: 7%;
+    width: 45%;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: relative;
+    font-size: 28px;
+    color: white;
+}
+
+.home .landing-img {
+    width: 420px;
+    height: 350px;
+    flex-shrink: 0;
+    border-radius: 50px;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    background-blend-mode: screen;
+    box-shadow: -2px -3px 2.3px -10px rgba(59, 160, 204, 0.15);
+
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.container h2 h3 p {
+    color: white;
+}
+  
+.container h2 {
+    font-size: 40px;
+    padding-top: 20px;
+}
+  
+.container h3 {
+    font-size: 25px;
+    padding-bottom: 10px;
+}
+  
+.container p {
+    font-size: 19px;
+    padding-bottom: 50px;
+    text-indent: 58px;
+    line-height: 30px;
+    font-style: oblique;
+}
+
+.team h3 {
+    margin-bottom: 10px;
+}
+
+.team li {
+    display: inline-grid;
+    column-gap: 50px;
+    margin-right: 120px;
+}
+
+.expolre {
+    margin-top: 50px;
+    margin-bottom: 80px;
+}
+
+.mechanicreg {
+    margin-top: 120px;
+    margin-bottom: 100px;
+    left: 334px;
+    align-items: center;
+    position: relative;
+    width: 520px;
+    height: 376px;
+    flex-shrink: 0;
+    border-radius: 32px;
+    background: linear-gradient(241deg, rgba(86, 149, 185, 0.78) 10.39%, rgba(7, 79, 119, 0.70) 47.81%, rgba(7, 25, 35, 0.66) 85.22%);
+    box-shadow: -11px -11px 4px 0px rgba(0, 0, 0, 0.25), 11px 11px 5.2px 0px rgba(0, 0, 0, 0.25);
+}
+
+.mechanicreg h2 {
+    font-size: 44px;
+    text-align: center;
+}
+
+/* Styling for input fields and select dropdown */
+input[type=text], input[type=password], input[type=email], select {
+    width: 52%;
+    color: rgba(255, 255, 255, 0.40);
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-flex;
+    left: 24%;
+    position: relative;
+    justify-content: center;
+    border-radius: 6px;
+    align-items: center;
+    border: 4px solid rgba(255, 255, 255, 0.40);
+    box-sizing: border-box;
+    background-color: transparent;
+    font-family: Lato;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+  
+  input[type=submit] {
+    width: 52%;
+    background: linear-gradient(90deg, #958CAE 0%, #E0D6FF 100%);
+    color: rgba(0, 0, 0, 0.98);
+    padding: 12px 17px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    position: absolute;
+    left: 24%;
+    top: 58%;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.30);
+    font-family: Lato;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+input[type=checkbox] {
+    position: absolute;
+    top: 50%;
+    left: 26%;
+}
+
+label {
+    position: absolute;
+    top: 48.5%;
+    left: 29%;
+}
+
+.forgot {
+    color: white;
+    font-size: 15px;
+    font-family: Lato;
+    font-weight: 500;
+    text-decoration: underline;
+    word-wrap: break-word;
+    position: absolute;
+    top: 60.5%;
+    left: 52%;
+}
+
+.mechanicreg a {
+    color: white;
+    text-decoration: underline;
+}
+
+.mechanicreg p{
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    position: absolute;
+    left: 26%;
+    top: 75%;
+}
+
+.google-btn {
+    position: absolute;
+    top: 85%;
+    left: 32%;
+}
+/* Modal customizations */
+.custom-modal .modal-content {
+    background-color: #f7f7f7;
+    border-radius: 10px;
+}
+
+.custom-modal .modal-header {
+    background-color: #343a40;
+    color: white;
+}
+
+.custom-modal .modal-title {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.custom-modal .modal-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.custom-modal .btn {
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.custom-modal .btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.custom-modal .btn-secondary {
+    background-color: #6c757d;
+    border: none;
+}
+.footer {
+    background-color: transparent;
+    color: white;
+    width: 100%;
+    position: relative;
+    padding: 5px;
+    text-align: center;
+    bottom: 0;
+}
+
+footer p {
+    font-size: 17px;
+}

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "start": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
@@ -11,6 +11,8 @@
   "description": "",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "connect-redis": "^7.1.1",
+    "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
@@ -19,6 +21,9 @@
     "mongoose": "^8.5.2",
     "passport": "^0.7.0",
     "passport-google-oauth20": "^2.0.0",
+    "redis": "^4.7.0",
+    "uuid": "^10.0.0",
+    "uuid-mongodb": "^2.5.5",
     "validator": "^13.12.0"
   },
   "devDependencies": {

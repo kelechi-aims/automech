@@ -1,33 +1,35 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
-const bcrypt = require('bcryptjs');
-
+const User = require('./user');
+const MUUID = require('uuid-mongodb');
+const Address = require('./address');
+const Service = require('./service');
 
 /**
  * Mechanic Schema
  */
 const mechanicSchema = new mongoose.Schema({
-    email: {
-        type: String,
-        required: [true, 'Please, enter an email'],
-        unique: true,
-        trim: true,
-        lowercase: true,
-        validate: [validator.isEmail, 'Please, enter a valid email'],
+    _id: {
+        type: 'object', // The _id will be stored as binary data in MongoDB
+        value: { type: 'Buffer' },
+        default: () => MUUID.v4(),
+    },
+    user_id : {
+        type: 'object', // References the _id of the User schema
+        ref: 'User',
+        required: true,
     },
     phoneNumber: {
         type: String,
-        required: [true, 'Please, enter a phone number'],
         trim: true,
         minlength: [11, 'Phone number must be 11 digits'],
-        validate: [validator.isMobilePhone, 'Please, enter a valid phone number'],
+        validate: [
+            {
+                validator: (value) => validator.isMobilePhone(value, 'en-NG'),  // Adjust locale as needed
+                message: 'Please, enter a valid Nigerian phone number',
+            },
+        ],
     },
-    password: {
-        type: String,
-        required: [true, 'Please, enter a password'],
-        minlength: [8, 'Password must be more than 8 characters'],
-    },
-    googleId: { type: String }, // For Google OAuth users
     firstName : {
         type: String,
         trim: true,
@@ -38,15 +40,15 @@ const mechanicSchema = new mongoose.Schema({
     },
     profilePicture: { type: String }, // url to profile picture
     bio: { type: String },
-    services: { type: [String] }, // List of services offered by the mechanic
-    address: { type: String },
+    services: {
+        type: ['object'],
+        ref: 'Service',
+    },
+    address_id: {
+        type: 'object',
+        ref: 'Address',
+    },
 }, { timestamps: true });
-
-// fire a funstion before doc saves to db
-mechanicSchema.pre('save', async function (next) {
-    this.password = await bcrypt.hash(this.password, 10); // this refers to the current document before saving to the db
-    next();
-});
 
 mechanicSchema.post('save', function (doc, next) {
     console.log('New mechanic created and saved:', doc);

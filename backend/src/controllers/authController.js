@@ -2,12 +2,14 @@ const Mechanic = require('../models/mechanic');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
-const GoogleStrategy = require('passport-google-oauth20');
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const User = require('../models/user');
+require('dotenv').config();
 
 // Hnadle errors
 const handleErrors = (err) => {
     console.log(err);
-    let errors = { email: '', phoneNumber: '', password: '' };
+    let errors = { email: '', password: '' };
 
     // Duplicate error code
     if (err.code === 11000) {
@@ -34,23 +36,24 @@ const createToken = (id) => {
 class authController {
     // Function to handle mechanic signup
     static async signupMechanic(req, res) {
-        try {
-            //Extract data from request body
-            const { email, phoneNumber, password } = req.body;
+        //Extract data from request body
+        const { email, password } = req.body;
             
+        
+        try {
             // Create new mechanic document
-            const newMechanic = new Mechanic({ email, phoneNumber, password });
-
+            const user = new User({ email, password, role: 'mechanic' });
+            
             // Save mechanic to database
-            await newMechanic.save();
+            await user.save();
             
             // Generate JWT Token
-            const token = createToken(newMechanic._id);
+            const token = createToken(user._id);
             console.log(token);
             res.cookie('jwt', token, { httpOnly: true, maxAge: 3600000 });
 
             // Return success message
-            res.status(201).json({ newMechanic: newMechanic._id });
+            res.status(201).json({ user: user._id, role: user.role});
         } catch (error) {
             const err = handleErrors(error);
             console.log(err);
@@ -66,8 +69,42 @@ class authController {
     }
 
 
+    // Function to handle customer signup
+    static async signupCustomer(req, res) {
+        //Extract data from request body
+        const { email, password } = req.body;
+            
+        
+        try {
+            // Create new mechanic document
+            const user = new User({ email, password, role: 'customer' });
+            
+            // Save mechanic to database
+            await user.save();
+            
+            // Generate JWT Token
+            const token = createToken(user._id);
+            console.log(token);
+            res.cookie('jwt', token, { httpOnly: true, maxAge: 3600000 });
+
+            // Return success message
+            res.status(201).json({ user: user._id, role: user.role});
+        } catch (error) {
+            const err = handleErrors(error);
+            console.log(err);
+
+            // Check if validation errors exist, otherwise return general error
+            if (err) {
+                res.status(400).json({ err });
+            } else {
+                res.status(500).json({ msg: 'Server error' });
+            }
+            
+        }
+    }
+
     // Function to login a mechanic
-    static async loginMechanic(req, res) {
+    static async login(req, res) {
         const { email, password } = req.body;
         if (!email || !password) {
             console.log('Email and password are required');
@@ -75,25 +112,25 @@ class authController {
         }
 
         try {
-            const mechanic = await Mechanic.findOne({ email });
-            if (!mechanic) {
-                console.log('Mechanic not found')
+            const user = await User.findOne({ email });
+            if (!user) {
+                console.log('User not found');
                 return res.status(400).json({ emailErr: 'This email is not registered'});
             }
 
-            const isPasswordValid = await bcrypt.compare(password, mechanic.password);
+            const isPasswordValid = await bcrypt.compare(password, user.password);
 
             if (!isPasswordValid) {
                 console.log('Incorrect password');
-                return res.status(401).json({ passwordErr: 'Invalid email or password '});
+                return res.status(401).json({ passwordErr: 'Invalid credentials '});
             }
 
-            const token = createToken(mechanic._id);
+            const token = createToken(user._id);
             console.log(token);
             res.cookie('jwt', token, { httpOnly: true, maxAge: 3600000 }); // 60 * 60 * 1000, which is 1h
 
             // Return success message
-            res.status(200).json({ message: 'Login successful', mechanic: mechanic._id });
+            res.status(200).json({ message: 'Login successful', user: user._id, role: user.role });
         } catch (error) {
             console.error(error);
             res.status(500).json({ error })
@@ -101,7 +138,7 @@ class authController {
     }
 
     // Google Sign-in setup
-    static googleAuth(req, res, next) {
+    static googleAuthMech(req, res, next) {
         passport.use(new GoogleStrategy({
             clientID: process.env.GOOGLE_CLIENT_ID,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET,
@@ -109,17 +146,18 @@ class authController {
         },
         async (accessToken, refreshToken, profile, done) => {
             try {
-                const mechanic = await Mechanic.findOne({ googleId: profile.id });
-                
-                if (mechanic) {
-                    return done(null, mechanic);
+                const user = await User.findOne({ googleId: profile.id });
+                if (user) {
+                    return done(null, user);
                 } else {
-                    const newMechanic = new Mechanic({
-                        email: profile.emails[0].value,
-                        googleId: profile.id
+                    const userEmail = profile.emails[0].value;
+                    const newUser = new User({
+                        email: userEmail,
+                        googleId: profile.id,
+                        role: 'mechanic' // Set the role as needed
                     });
-                    await newMechanic.save();
-                    return done(null, newMechanic);       
+                    await newUser.save();
+                    return done(null, newUser);
                 }
             } catch (err) {
                 return done(err, false);
@@ -135,9 +173,16 @@ class authController {
             if (err) {
                 return next(err);
             }
-            const token = createToken(mechanic._id);
+            const token = createToken(user._id);
             res.cookie('jwt', token, { httpOnly: true, maxAge: 3600000 });
-            res.redirect('/dashboard'); // Redirect to dashboard or another protected route
+            
+            if (user.role === 'mechanic') {
+                res.redirect('/mechanic/dashboard'); // Redirect to dashboard or another protected route
+            } else if (user.role === 'customer') {
+                res.redirect('/customer/dashboard');
+            } else {
+                res.redirect('/')
+            }
         })(req, res, next);
     }
 }
